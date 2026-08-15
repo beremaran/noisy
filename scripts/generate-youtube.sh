@@ -50,14 +50,16 @@ if [[ "$dry_run" == false ]]; then
 fi
 
 recipes=(
-    'brown=70,pink=30|10|10000|4101|brown-pink-20hz-10khz-10h-seed4101.mp4'
-    'white=100|10|12000|4201|white-20hz-12khz-10h-seed4201.mp4'
-    'blue=50,violet=50|1|7000|4301|blue-violet-20hz-7khz-1h-seed4301.mp4'
+    'white=100|10|60|10000|4101|soft-white-60hz-10khz-10h-seed4101.mp4'
+    'pink=100|10|40|14000|4201|sleep-pink-40hz-14khz-10h-seed4201.mp4'
+    'pink=70,brown=30|10|40|10000|4301|warm-pink-40hz-10khz-10h-seed4301.mp4'
+    'brown=100|10|30|12000|4401|brown-30hz-12khz-10h-seed4401.mp4'
+    'pink=50,brown=50|10|30|12000|4501|pink-brown-30hz-12khz-10h-seed4501.mp4'
 )
 
 if [[ "$force" == false ]]; then
     for recipe in "${recipes[@]}"; do
-        IFS='|' read -r _mix _hours _lowpass _seed filename <<<"$recipe"
+        IFS='|' read -r _mix _hours _highpass _lowpass _seed filename <<<"$recipe"
         output="$OUTPUT_DIR/$filename"
         if [[ -e "$output" ]]; then
             printf 'Error: output already exists: %s (pass --force to overwrite)\n' "$output" >&2
@@ -69,7 +71,7 @@ fi
 cd "$REPO_ROOT"
 completed=0
 for recipe in "${recipes[@]}"; do
-    IFS='|' read -r mix hours lowpass seed filename <<<"$recipe"
+    IFS='|' read -r mix hours highpass lowpass seed filename <<<"$recipe"
     output="$OUTPUT_DIR/$filename"
     command=(
         uv run noisy
@@ -77,7 +79,7 @@ for recipe in "${recipes[@]}"; do
         --hours "$hours"
         --sample-rate 48000
         --channels 1
-        --highpass-hz 20
+        --highpass-hz "$highpass"
         --lowpass-hz "$lowpass"
         --target-rms-db -18
         --peak-ceiling 0.98
