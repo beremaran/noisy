@@ -7,7 +7,25 @@ name = "noisy"
 version = "0.1.0"
 description = "Streaming colored-noise audio generator with optional black-video muxing"
 readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Berke Arslan", email = "berke@beremaran.com" }]
 requires-python = ">=3.10"
+keywords = ["noise", "audio", "dsp", "sleep-sounds", "noise-generator", "ffmpeg", "youtube"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Video",
+]
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
@@ -19,6 +37,13 @@ test = ["pytest>=7.4"]
 
 [project.scripts]
 noisy = "noisy.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/beremaran/noisy"
+Repository = "https://github.com/beremaran/noisy"
+Documentation = "https://github.com/beremaran/noisy#readme"
+"Bug Tracker" = "https://github.com/beremaran/noisy/issues"
+Changelog = "https://github.com/beremaran/noisy/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 packages = ["noisy"]

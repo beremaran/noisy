@@ -6,6 +6,8 @@ stateful DSP generators one chunk at a time and writes each chunk immediately
 with `soundfile`, so hours-long jobs do not require a full-duration waveform in
 memory.
 
+[![CI](https://github.com/beremaran/noisy/actions/workflows/ci.yml/badge.svg)](https://github.com/beremaran/noisy/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
+
 For the complete command reference, filter behavior, mixing model, validation
 rules, and long-master workflow, see the [user guide](docs/USER-GUIDE.md).
 
@@ -78,6 +80,23 @@ Because the picture is mathematically identical black on every frame, 1 fps is
 enough for a visually identical result and keeps the video encode lightweight.
 The resolution defaults to `1920x1080` and can be changed with, for example,
 `--resolution 1280x720`.
+
+## Published videos
+
+These black-screen noise videos were generated with `scripts/generate-youtube.sh`
+and are published on YouTube.
+
+| Video | Duration | Watch |
+| --- | --- | --- |
+| Warm Pink Noise for Deep Relaxation & Sleep \| 10 Hours, Black Screen | 10 hours | [Watch on YouTube](https://youtu.be/fcc6-h9XU1w) |
+| Pink and Brown Noise for Sleep & Sound Masking \| 10 Hours, Black Screen | 10 hours | [Watch on YouTube](https://youtu.be/ShaSYd97S10) |
+| Pink Noise for Sleep, Relaxation & Focus \| 10 Hours, Black Screen | 10 hours | [Watch on YouTube](https://youtu.be/YQCeorh4tow) |
+| Soft White Noise for Sleep & Sound Masking \| 10 Hours, Black Screen | 10 hours | [Watch on YouTube](https://youtu.be/DWwA5f1Iup8) |
+| Deep Brown Noise for Sleep, Focus & Relaxation \| 10 Hours, Black Screen | 10 hours | [Watch on YouTube](https://youtu.be/L5zlCrAuRM0) |
+
+See [the upload guide](docs/youtube-upload-guide.md) for titles, descriptions,
+and tags; [the master guide](docs/youtube-master-guide.md) for generation and
+pre-upload QA; and `scripts/generate-youtube.sh` to regenerate them.
 
 ## Noise colors
 
@@ -190,3 +209,15 @@ sanity checks, WAV size protection, and FFmpeg command construction.
 
 Implementation details for contributors live in the Python module docstrings;
 the [user guide](docs/USER-GUIDE.md) is the supported operational reference.
+
+## License
+
+MIT; see [LICENSE](LICENSE).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
