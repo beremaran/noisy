@@ -466,7 +466,7 @@ For a small manual smoke run that exercises the real writer:
 ```bash
 .venv/bin/noisy --mix white=100 --seconds 0.25 \
   --sample-rate 8000 --highpass-hz 0 --lowpass-hz 0 \
-  --audio-output /tmp/noisy-smoke.flac --seed 1 --quiet
+  --audio-output noisy-smoke.flac --seed 1 --quiet
 ```
 
 Then inspect frame count and finiteness with `soundfile` or rerun the focused

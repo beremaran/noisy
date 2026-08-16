@@ -335,7 +335,7 @@ tool only generates and muxes files; it does not upload them, verify YouTube's
 acceptance rules, or predict platform-specific upload behavior. YouTube
 transcodes published media, so a lossless local MKV/FLAC track does not
 guarantee a lossless track after publication. For platform-specific upload
-guidance, see the separate [YouTube upload guide](../outputs/YOUTUBE-NOISE-UPLOAD-GUIDE.md).
+guidance, see the separate [YouTube upload guide](./youtube-master-guide.md).
 
 1. Install dependencies with `uv sync` and verify `uv run noisy --help`.
 2. Install FFmpeg and verify `ffmpeg -version` if producing video.
